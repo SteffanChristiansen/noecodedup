@@ -24,10 +24,7 @@ opts_chunk$set(warning = TRUE,
                echo = FALSE,
                warning = FALSE)
 
-options(scipen = 100, digits = 3, bitmapType="cairo") # fixes grid.Call warning 
-
-# date
-# time <- Sys.time()
+options(scipen = 100, digits = 3, bitmapType = "cairo") # fixes grid.Call warning 
 time <- lubridate::date()
 ```
 
@@ -39,7 +36,6 @@ theme_set(theme_bw() +
             theme(plot.title = element_text(hjust = 0.5)))
 ```
 Following packages were loaded: `r packages` <br><br>
-
 
 Rendering of the report was started `r time` <br>
 

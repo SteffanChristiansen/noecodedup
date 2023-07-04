@@ -19,5 +19,6 @@ create_folder_structure <- function(directory){
   writeLines(c(".Rproj.user", ".Rhistory", ".RData", ".Ruserdata",
                "data/", "reports/", "results/"),
              ".gitignore.txt")
+  file.copy(from = "scripts/template.Rmd", to = file.path(directory, "scripts", "temp.Rmd"))
 }
 

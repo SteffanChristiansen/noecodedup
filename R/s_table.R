@@ -1,6 +1,6 @@
 #' Simple tables
 #'
-#' @param dataframe
+#' @param data.frame
 #'
 #' @return A table in kable format
 #' @export

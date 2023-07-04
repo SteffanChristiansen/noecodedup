@@ -4,19 +4,21 @@
 \alias{s_names}
 \title{Simple names}
 \usage{
-s_names(names)
+s_names(df)
 }
 \arguments{
-\item{names}{}
+\item{data.frame}{}
 }
 \value{
-A character vector
+A data.frame with simple column names
 }
 \description{
 s_names() removes symbols such as parentheses and colons and
 substitute symbols (|, :, and +) with underscores. No letters are capitalized.
 }
 \examples{
-x <- c("x (1)", "X 2", "X - 3", "X:4")
+x <- data.frame(x = c(1, 2), y = c(4, 2), z = c(1,2))
+colnames(x) <- c("COL (1)", "col:2", "col-3")
+x
 s_names(x)
 }

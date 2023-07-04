@@ -16,5 +16,5 @@ scroll_table <- function(dataframe) {
     kableExtra::kable_styling("striped",
                               full_width = FALSE,
                               font_size = 14) |>
-    kableExtra::scroll_box(width = "800px", height = "200px")
+    kableExtra::scroll_box(width = "800px", height = "400px")
 }

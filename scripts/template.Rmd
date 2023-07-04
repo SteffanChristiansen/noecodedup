@@ -1,0 +1,87 @@
+---
+title: "NAME"
+author: "Steffan Noe Christiansen"
+output: html_document
+---
+
+#### Global options and paths
+```{r setup, message=FALSE, echo = FALSE}
+# paths
+root_path <- file.path("", "Users", "fmc755", "Documents", "R", "projects")
+# data_path <- file.path("data", "SUBFOLDER")
+
+# global options
+require("knitr")
+opts_knit$set(root.dir = root_path)
+opts_chunk$set(warning = TRUE,
+               message = FALSE,
+               dpi = 300,
+               dev = "jpeg",
+               fig.width = 6,
+               fig.height = 6,
+               fig.align="center", 
+               fig.path = file.path(root_path, "results", "images", "/"),
+               echo = FALSE,
+               warning = FALSE)
+
+options(scipen = 100, digits = 3, bitmapType="cairo") # fixes grid.Call warning 
+
+# date
+# time <- Sys.time()
+time <- lubridate::date()
+```
+
+```{r libraries, echo = FALSE, message=FALSE}
+packages <- c("tidyverse", "patchwork", "kableExtra", "noecodedup", "lubridate")
+
+invisible(lapply(packages, require, character.only = TRUE)) 
+theme_set(theme_bw() + 
+            theme(plot.title = element_text(hjust = 0.5)))
+```
+Following packages were loaded: `r packages` <br><br>
+
+
+Rendering of the report was started `r time` <br>
+
+
+#### Loading data
+```{r loading data}
+# list.files(data_path, pattern = "csv")
+
+# readme <- read_tsv(file.path(data_path, "README.txt"), col_names = c("README"))
+# readme %>% 
+#   kable() %>% 
+#   kable_minimal()
+```
+<br>
+
+List: <br> 
+
+  1) A
+  2) B
+  3) C
+
+List: <br> 
+
+  * A 
+  * B 
+  * C
+
+
+
+***
+```{r computetime, echo=FALSE}
+time <- lubridate::date()
+```
+Report was knitted `r time` <br>
+
+
+```{r}
+sessionInfo()
+```
+
+
+```{r rendering while keeping objects in global environment, echo = FALSE, eval=FALSE}
+rmarkdown::render("scripts/template.Rmd", clean = TRUE, output_dir = "reports/")
+```
+<br>

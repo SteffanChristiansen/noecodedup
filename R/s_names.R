@@ -1,19 +1,22 @@
 #' Simple names
 #'
-#' @param names
+#' @param data.frame
 #'
-#' @return A character vector
+#' @return A data.frame with simple column names
 #' @export
 #'
 #' @description s_names() removes symbols such as parentheses and colons and
 #' substitute symbols (|, :, and +) with underscores. No letters are capitalized.
 #'
 #' @examples
-#' x <- c("x (1)", "X 2", "X - 3", "X:4")
+#' x <- data.frame(x = c(1, 2), y = c(4, 2), z = c(1,2))
+#' colnames(x) <- c("COL (1)", "col:2", "col-3")
+#' x
 #' s_names(x)
-s_names <- function(names) {
-  names <- stringr::str_replace_all(
-    names,
+
+s_names <- function(df) {
+  colnames(df) <- stringr::str_replace_all(
+    colnames(df),
     c(" \\| " = "_",
       " - " = "_",
       " " = "_",
@@ -22,7 +25,8 @@ s_names <- function(names) {
       ":" = "",
       "\\(" = "",
       "\\)" = "",
-      "\\+" = "_")) |>
+      "\\+" = "_",
+      "#" = "")) |>
     tolower()
-  return(names)
+  return(df)
 }

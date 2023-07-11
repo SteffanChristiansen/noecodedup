@@ -1,3 +1,3 @@
-## README
+## noecodedup 
 
-R package to avoid code duplication
+noecodedup is an R package with helper functions to avoid code duplication

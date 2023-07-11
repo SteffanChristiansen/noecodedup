@@ -7,10 +7,10 @@
 s_names(df)
 }
 \arguments{
-\item{data.frame}{}
+\item{df}{}
 }
 \value{
-A data.frame with simple column names
+A df with simple column names
 }
 \description{
 s_names() removes symbols such as parentheses and colons and

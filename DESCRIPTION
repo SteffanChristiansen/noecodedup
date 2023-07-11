@@ -2,18 +2,17 @@ Package: noecodedup
 Type: Package
 Title: Convenience functions to avoid code duplication 
 Version: 0.1.0
-Authors@R: person(given = "Steffan", family = "Christiansen", middle = "Noe", 
+Authors@R: person(given = "Steffan", family = "Noe Niikanoff Christiansen", , 
     "snc@hst.aau.dk", comment = c(ORCID = "0000-0002-8655-3452"), role = c("aut", "cre"))
 Maintainer: Steffan Noe Christiansen <snc@hst.aau.dk>
 Description: A set of functions that can be used to avoid code duplication 
     in common tasks of data analyses. 
-License: `use_mit_license()`
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3
 Imports: 
+    dplyr,
     kableExtra,
     knitr,
     stringr
-Suggests: 
-

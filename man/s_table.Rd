@@ -4,10 +4,10 @@
 \alias{s_table}
 \title{Simple tables}
 \usage{
-s_table(dataframe)
+s_table(df)
 }
 \arguments{
-\item{dataframe}{}
+\item{df}{}
 }
 \value{
 A table in kable format

@@ -1,8 +1,8 @@
 #' Simple names
 #'
-#' @param data.frame
+#' @param df
 #'
-#' @return A data.frame with simple column names
+#' @return A df with simple column names
 #' @export
 #'
 #' @description s_names() removes symbols such as parentheses and colons and

@@ -1,37 +1,34 @@
 # doc: https://r-pkgs.org/whole-game.html
 library(devtools)
-# load_all()
-library(tidyverse)
-
-# document()
-# exists("scol_names", where = globalenv(), inherits = FALSE)
-# ?s_names
-#
-# check()
-# install()
+# library(tidyverse)
 
 
-x <- data.frame(a = c(1, 2),
-                b = c(4, 2),
-                c = c(1,2),
-                d = c(1,2))
-colnames(x) <- c("COL 1", "col 2", "col-3", "#col 4")
+
+# use_r("sum_stat") # convert function into new .R file
+
+load_all()
 
 
-# s_names <- function(df) {
-#   colnames(df) <- stringr::str_replace_all(
-#     colnames(df),
-#     c(" \\| " = "_",
-#       " - " = "_",
-#       " " = "_",
-#       "|" = "",
-#       "-" = "_",
-#       ":" = "",
-#       "\\(" = "",
-#       "\\)" = "",
-#       "\\+" = "_",
-#       "#" = "")) |>
-#     tolower()
-#   return(df)
-# }
-# s_names(x)
+
+# use_mit_license() # adding licence
+
+document()
+# check 1.12 for man page for new functions
+
+use_package("")
+# 1.16 - packages that are imported
+
+# use_git()
+
+
+check()
+install()
+
+
+# x <- data.frame(a = c(1, 2),
+#                 b = c(4, 2),
+#                 c = c(1,2),
+#                 d = c(1,2))
+# colnames(x) <- c("COL 1", "col 2", "col-3", "#col 4")
+
+

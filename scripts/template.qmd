@@ -1,14 +1,14 @@
 ---
-title: "NAME"
-author: "Steffan Noe Christiansen"
-output: html_document
+title: "template"
+format: html
 ---
+
 
 #### Global options and paths
 ```{r setup, message=FALSE, echo = FALSE}
 # paths
 root_path <- file.path("", "Users", "fmc755", "Documents", "R", "projects")
-root_path <- here::here()
+# data_path <- file.path("data", "SUBFOLDER")
 
 # global options
 require("knitr")
@@ -29,8 +29,7 @@ time <- lubridate::date()
 ```
 
 ```{r libraries, echo = FALSE, message=FALSE}
-packages <- c("tidyverse", "patchwork", "kableExtra", "noecodedup", "lubridate", 
-              "here")
+packages <- c("tidyverse", "patchwork", "kableExtra", "noecodedup", "lubridate")
 
 invisible(lapply(packages, require, character.only = TRUE)) 
 theme_set(theme_bw() + 

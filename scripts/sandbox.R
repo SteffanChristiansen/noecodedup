@@ -32,3 +32,36 @@ install()
 # colnames(x) <- c("COL 1", "col 2", "col-3", "#col 4")
 
 
+
+
+
+# FIX SUM_STAT ------------------------------------------------------------
+# wrong order of labels!
+
+df<-mtcars %>% group_by(gear)
+variables <- "cyl"
+
+# summaries <- bind_rows(
+#   df %>%
+#     select(all_of(variables)) |>
+#     summarise_all(min),
+#   df %>%
+#     select(all_of(variables)) |>
+#     summarise_all(median),
+#   df %>%
+#     select(all_of(variables)) |>
+#     summarise_all(max))
+
+summaries <- tibble(
+  min = df %>%
+    select(all_of(variables)) |>
+    summarise_all(min),
+  median = df %>%
+    select(all_of(variables)) |>
+    summarise_all(median),
+  max = df %>%
+    select(all_of(variables)) |>
+    summarise_all(max))
+
+summaries
+

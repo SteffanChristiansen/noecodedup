@@ -17,7 +17,7 @@
 #'sum_stat(mtcars, var)
 
 sum_stat <- function(df, variables) {
-  measures <- c("minimum", "median", "maximum")
+  # measures <- c("minimum", "median", "maximum")
   summaries <- bind_rows(
     df %>%
       select(variables) |>
@@ -29,6 +29,6 @@ sum_stat <- function(df, variables) {
       select(variables) |>
       summarise_all(max)
   )
-  bind_cols(data.frame(value = measures, summaries))
+  # bind_cols(data.frame(value = measures, summaries))
 }
 

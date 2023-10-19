@@ -5,10 +5,19 @@ output: html_document
 ---
 
 #### Global options and paths
+```{r libraries, echo = FALSE, message=FALSE}
+packages <- c("tidyverse", "patchwork", "kableExtra", "noecodedup", "here")
+
+invisible(lapply(packages, require, character.only = TRUE)) 
+theme_set(theme_bw() + 
+            theme(plot.title = element_text(hjust = 0.5)))
+```
+
 ```{r setup, message=FALSE, echo = FALSE}
 # paths
-root_path <- file.path("", "Users", "fmc755", "Documents", "R", "projects")
-root_path <- here::here()
+# root_path <- file.path("", "Users", "fmc755", "Documents", "R", "projects")
+root_path <- here()
+projects_path <- str_remove(root_path, "/[A-z]+$")
 
 # global options
 require("knitr")
@@ -28,21 +37,12 @@ options(scipen = 100, digits = 3, bitmapType = "cairo") # fixes grid.Call warnin
 time <- lubridate::date()
 ```
 
-```{r libraries, echo = FALSE, message=FALSE}
-packages <- c("tidyverse", "patchwork", "kableExtra", "noecodedup", "lubridate", 
-              "here")
-
-invisible(lapply(packages, require, character.only = TRUE)) 
-theme_set(theme_bw() + 
-            theme(plot.title = element_text(hjust = 0.5)))
-```
-Following packages were loaded: `r packages` <br><br>
-
-Rendering of the report was started `r time` <br>
+Rendering of the report was started `r time` <br> Following packages
+were loaded: `r packages` <br><br>
 
 
-#### Loading data
-```{r loading data}
+#### Data
+```{r Data}
 # list.files(data_path, pattern = "csv")
 
 # readme <- read_tsv(file.path(data_path, "README.txt"), col_names = c("README"))

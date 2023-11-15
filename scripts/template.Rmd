@@ -1,8 +1,12 @@
+```{r, echo = FALSE}
+title <- "temp_name"
+```
 ---
-title: "NAME"
+title: `r title`
 author: "Steffan Noe Christiansen"
 output: html_document
 ---
+
 
 #### Global options and paths
 ```{r libraries, echo = FALSE, message=FALSE}
@@ -15,9 +19,9 @@ theme_set(theme_bw() +
 
 ```{r setup, message=FALSE, echo = FALSE}
 # paths
-# root_path <- file.path("", "Users", "fmc755", "Documents", "R", "projects")
 root_path <- here()
 projects_path <- str_remove(root_path, "/[A-z]+$")
+fig_path <- here("results", "images", title, "/")
 
 # global options
 require("knitr")
@@ -29,7 +33,7 @@ opts_chunk$set(warning = TRUE,
                fig.width = 6,
                fig.height = 6,
                fig.align="center", 
-               fig.path = file.path(root_path, "results", "images", "/"),
+               fig.path = fig_path,
                echo = FALSE,
                warning = FALSE)
 

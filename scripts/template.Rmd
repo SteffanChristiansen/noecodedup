@@ -1,6 +1,7 @@
 ```{r, echo = FALSE}
 title <- "temp_name"
 ```
+
 ---
 title: `r title`
 author: "Steffan Noe Christiansen"
@@ -15,6 +16,7 @@ packages <- c("tidyverse", "patchwork", "kableExtra", "noecodedup", "here")
 invisible(lapply(packages, require, character.only = TRUE)) 
 theme_set(theme_bw() + 
             theme(plot.title = element_text(hjust = 0.5)))
+# update_geom_defaults("vline", aes(linewidth = 0.75))
 ```
 
 ```{r setup, message=FALSE, echo = FALSE}
@@ -63,6 +65,13 @@ List: <br>
   3) C
 
 
+
+Notice: <br> 
+  
+  *
+  *
+<br><br>
+
 #### Unresolved questions
 List: <br> 
 
@@ -71,7 +80,11 @@ List: <br>
   * C
 
  <br><br> 
-***
+
+
+<br><br>
+
+------------------------------------------------------------------------
 ```{r computetime, echo=FALSE}
 time <- lubridate::date()
 ```

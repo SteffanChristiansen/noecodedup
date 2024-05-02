@@ -91,7 +91,7 @@ List: <br>
 ```{r computetime, echo=FALSE}
 time <- lubridate::date()
 ```
-Report was knitted `r time` <br>
+Report was finished `r time` <br>
 
 
 ```{r}

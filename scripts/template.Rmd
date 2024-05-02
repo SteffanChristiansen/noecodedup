@@ -15,7 +15,10 @@ packages <- c("tidyverse", "patchwork", "kableExtra", "noecodedup", "here")
 
 invisible(lapply(packages, require, character.only = TRUE)) 
 theme_set(theme_bw() + 
-            theme(plot.title = element_text(hjust = 0.5)))
+            theme(plot.title = element_text(hjust = 0.5),
+                  axis.text.x = element_text(angle = 45,
+                                             margin = margin(4, 0, 0, 0),
+                                             hjust = 1)))
 # update_geom_defaults("vline", aes(linewidth = 0.75))
 ```
 
@@ -23,6 +26,7 @@ theme_set(theme_bw() +
 # paths
 root_path <- here()
 projects_path <- str_remove(root_path, "/[A-z]+$")
+title <- str_replace_all(title, " ", "_")
 fig_path <- here("results", "images", title, "/")
 
 # global options
@@ -64,13 +68,6 @@ List: <br>
   2) B
   3) C
 
-
-
-Notice: <br> 
-  
-  *
-  *
-<br><br>
 
 #### Unresolved questions
 List: <br> 

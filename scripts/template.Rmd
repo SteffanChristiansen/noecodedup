@@ -4,7 +4,7 @@ title <- "temp_name"
 
 ---
 title: `r title`
-author: "Steffan Noe Christiansen"
+author: "Steffan Noe Niikanoff Christiansen"
 output: html_document
 ---
 

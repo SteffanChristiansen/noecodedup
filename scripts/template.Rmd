@@ -10,8 +10,9 @@ output: html_document
 
 
 #### Global options and paths
-```{r libraries, echo = FALSE, message=FALSE}
-packages <- c("tidyverse", "patchwork", "kableExtra", "noecodedup", "here")
+```{r Global options and paths, echo = FALSE, message=FALSE}
+# libraries
+packages <- c("tidyverse", "patchwork", "kableExtra", "noecodedup", "here", "knitr")
 
 invisible(lapply(packages, require, character.only = TRUE)) 
 theme_set(theme_bw() + 
@@ -23,20 +24,17 @@ theme_set(theme_bw() +
                   strip.background = element_rect(fill="white"),
                   panel.spacing = unit(0.1, "lines")))
 # update_geom_defaults("vline", aes(linewidth = 0.75))
-```
 
-```{r setup, message=FALSE, echo = FALSE}
 # paths
 root_path <- here()
 projects_path <- str_remove(root_path, "/[A-z]+$")
 title <- str_replace_all(title, " ", "_")
 fig_path <- here("results", "images", title, "/")
+tab_path <- here("results", "tables", title, "/")
 
 # global options
-require("knitr")
 opts_knit$set(root.dir = root_path)
-opts_chunk$set(warning = TRUE,
-               message = FALSE,
+opts_chunk$set(message = FALSE,
                dpi = 300,
                dev = "jpeg",
                fig.width = 6,

@@ -1,2 +1,0 @@
-user.name='SteffanChristiansen'
-user.email='snc@hst.aau.dk'

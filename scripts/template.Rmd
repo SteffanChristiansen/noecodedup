@@ -9,7 +9,7 @@ output: html_document
 ---
 
 
-#### Global options and paths
+### Global options and paths
 ```{r Global options and paths, echo = FALSE, message=FALSE}
 # libraries
 packages <- c("tidyverse", "patchwork", "kableExtra", "noecodedup", "here", "knitr")

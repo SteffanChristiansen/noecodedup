@@ -7,16 +7,17 @@
 sum_stat(df, variables)
 }
 \arguments{
-\item{variables}{}
+\item{df}{A data.frame with values that needs to be summarised}
+
+\item{variables}{Selected columns from the data.frame}
 }
 \value{
-Summary statistics of selected variables
+Minimum, median and maximum values of selected variables
 }
 \description{
 sum_stat returns summary statistics of selected variables
 from a data frame
 }
 \examples{
-var <- c("mpg", "cyl")
-sum_stat(mtcars, var)
+sum_stat(mtcars, dplyr::everything())
 }

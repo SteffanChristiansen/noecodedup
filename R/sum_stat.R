@@ -1,10 +1,9 @@
-
 #' Summary statistics
 #'
-#' @param df
-#' @param variables
+#' @param df A data.frame with values that needs to be summarised
+#' @param variables Selected columns from the data.frame
 #'
-#' @return Summary statistics of selected variables
+#' @return Minimum, median and maximum values of selected variables
 #' @import dplyr
 #' @export
 #'
@@ -13,8 +12,7 @@
 #'
 #'
 #' @examples
-#'var <- c("mpg", "cyl")
-#'sum_stat(mtcars, var)
+#' sum_stat(mtcars, dplyr::everything())
 
 sum_stat <- function(df, variables) {
   # measures <- c("minimum", "median", "maximum")
@@ -29,6 +27,10 @@ sum_stat <- function(df, variables) {
       select(variables) |>
       summarise_all(max)
   )
-  # bind_cols(data.frame(value = measures, summaries))
+
+  summaries <- summaries %>%
+    mutate(measures = c("minimum", "median", "maximum")) %>%
+    select(measures, dplyr::everything())
+  return(summaries)
 }
 

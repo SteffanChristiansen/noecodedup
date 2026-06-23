@@ -1,16 +1,15 @@
-```{r, echo = FALSE}
-title <- "template"
-```
-
 ---
-title: `r title`
+title: "template"
 author: "Steffan Noe Niikanoff Christiansen"
+date: "2026-04-29"
 output: html_document
 ---
 
 
 ### Global options and paths
 ```{r Global options and paths, echo = FALSE, message=FALSE}
+title <- "template"
+
 # libraries
 packages <- c("tidyverse", "patchwork", "kableExtra", "noecodedup", "here", "knitr")
 
@@ -50,6 +49,7 @@ time <- lubridate::date()
 
 Rendering of the report was started `r time` <br> Following packages
 were loaded: `r packages` <br><br>
+
 
 
 #### Data

@@ -1,0 +1,37 @@
+snippet [
+	[${1:label}](${2:location})
+
+snippet ![
+	![${1:label}](${2:location})
+
+snippet r
+	```{r ${1:label}, ${2:options}}
+	${0}
+	```
+
+snippet rcpp
+	```{r, engine='Rcpp'}
+	#include <Rcpp.h>
+	using namespace Rcpp;
+
+	${0}
+
+	```
+
+snippet br
+	<br><br>
+
+snippet cnk
+	#### ${1:name}
+	```{r ${1:name}, fig.width = 10, fig.height = 6, out.width = "100%"}
+
+	```
+	<br><br>
+
+snippet No
+	Notice: <br>
+
+		*
+		*
+	<br><br>
+
